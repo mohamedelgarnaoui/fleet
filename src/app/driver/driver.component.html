@@ -1,0 +1,12 @@
+  
+<mat-card>
+    <app-driver-list></app-driver-list>
+</mat-card>
+  
+<mat-card>
+  <app-driver-details *ngIf="selectedDriver;else noDriver" [currentDriver]="selectedDriver" ></app-driver-details>
+</mat-card>
+
+<ng-template #noDriver>
+  <p>No Driver selected</p>
+</ng-template>

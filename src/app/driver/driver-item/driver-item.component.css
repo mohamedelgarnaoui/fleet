@@ -1,0 +1,42 @@
+.cardList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .cardList > * {
+    box-sizing: border-box;
+  }
+  
+  .cardList > *:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  .btn{
+    margin: 5px;
+  }
+  /*item*/
+  .card-image{
+   height: 280px;
+   width: 270px;
+   object-fit: contain;
+  }
+  
+  .card-content{
+    font-size: large;
+    font-weight: bolder;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .mat-card-actions .flex-spacer{
+    width: 100%;
+  }
+  
+  .example-card {
+    width: 260px;
+    flex: 0 1 calc(23% - 32px);
+    margin: 10px;
+  }
+  

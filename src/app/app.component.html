@@ -1,0 +1,3 @@
+<app-navbar (pageSelected)="onNavigate($event)"></app-navbar>
+<app-driver *ngIf="loadedPage === 'drivers'"></app-driver>
+<app-vehicle *ngIf="loadedPage === 'vehicles'"></app-vehicle>
