@@ -17,7 +17,7 @@ export class DriverService {
     this.vehicles = this.vehicleService.getVehicles();
 
     this.drivers =  [
-      new Driver(1, 'Mohamed', 'Elgarnaoui', '111222111/A1',
+      new Driver(1, 'Med', 'Elgarnaoui', '111222111/A1',
         this.vehicles[1], 'assets/img/driver.png'),
       new Driver(1, 'Ahmed', 'Ahm', '19992111/B1',
         this.vehicles[0], 'assets/img/driver1.png'),
