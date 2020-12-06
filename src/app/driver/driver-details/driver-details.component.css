@@ -15,3 +15,8 @@
   .example-spacer {
     flex: 1 1 auto;
 }
+.card-image{
+  height: 280px;
+  width: 270px;
+  object-fit: contain;
+ }

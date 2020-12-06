@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SharedModule } from './shared/shared.module';
 import { VehicleModule } from './vehicle/vehicle.module';
 import { DriverModule } from './driver/driver.module';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 
 
@@ -15,7 +16,8 @@ import { DriverModule } from './driver/driver.module';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { DriverModule } from './driver/driver.module';
     BrowserAnimationsModule,
     SharedModule,
     VehicleModule,
-    DriverModule
+    DriverModule,
+    AppRoutingModule
     
   ],
   providers: [],

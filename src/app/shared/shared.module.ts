@@ -10,9 +10,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { ShadowDirective } from '../directive/shadow.directive';
 import { FirstUpperCasePipe } from '../pipes/first-upper-case.pipe';
+import { RouterModule } from '@angular/router';
+import {FormsModule} from '@angular/forms';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireModule} from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -23,6 +30,7 @@ import { FirstUpperCasePipe } from '../pipes/first-upper-case.pipe';
   ],
 
   imports: [
+    
     CommonModule,
     MatToolbarModule,
     MatIconModule,
@@ -32,9 +40,15 @@ import { FirstUpperCasePipe } from '../pipes/first-upper-case.pipe';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule,
+    FormsModule,AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule,
+    HttpClientModule
   ],
   exports: [
+    AngularFireModule,
+    AngularFireStorageModule,
     CommonModule,
     MatToolbarModule,
     MatIconModule,
@@ -46,7 +60,13 @@ import { FirstUpperCasePipe } from '../pipes/first-upper-case.pipe';
     MatInputModule,
     MatTableModule,
     ShadowDirective,
-    FirstUpperCasePipe
+    FirstUpperCasePipe,
+    RouterModule,
+    MatDialogModule,
+    FormsModule,
+    AngularFireModule,
+    AngularFireStorageModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }

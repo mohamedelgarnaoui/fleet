@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { Vehicle } from '../model/vehicle';
 
 @Injectable({
@@ -6,15 +8,30 @@ import { Vehicle } from '../model/vehicle';
 })
 export class VehicleService {
 
-  vehicles: Vehicle[] = [
-    new Vehicle(1, '147852-I-78', 'Mercedes', 14520),
-    new Vehicle(2,  '258963-E-48', 'Mazirati', 100000),
-    new Vehicle(3,  '247856-A-19', 'Dacia', 147000)
-  ];
+  vehicleChanged : Subject<void> = new Subject();
   
-  constructor() { }
+  url = 'http://localhost:3000/vehicles';
 
-  getVehicles(): Vehicle[]{
-    return this.vehicles;
+  vehicles: Vehicle[] = [];
+  
+
+  constructor(private  http: HttpClient) { }
+
+  getVehicles(): Observable<any> {
+    return this.http.get<any>(this.url);
   }
+
+  addVehicle(vehicle: Vehicle): Observable<any>{
+    return this.http.post(this.url, vehicle);
+  }
+
+  getVehicleById(id: any): Observable<any> {
+    return this.http.get<any>(`${this.url}/${id}`);
+  }
+
+  editVehicle(vehicle: Vehicle): Observable<any>{
+    return this.http.put(`${this.url}/${vehicle.id}`, vehicle);
+  }
+
+  
 }
